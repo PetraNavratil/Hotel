@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flipping square</title>
+<style>
+
+body{
+    max-width: 960px;
+    margin: 200px, auto;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: azure;
+    padding: 8%;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    perspective: 200px;     /*přídání 3D efektu - čím nižší číslo tím větší 3D efekt - jako by se to vyklánělo z obrazovky*/
+}
+
+.square div{
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    background: #37c0cd;
+    animation: flip 2s linear infinite;
+}
+
+@keyframes flip {
+    0%{ transform: rotateX(0) rotateY(0);}
+    25%{ transform: rotateX(180deg) rotateY(0);}
+    50%{ transform: rotateX(180deg) rotateY(-180deg);}
+    75%{ transform: rotateX(0) rotateY(-180deg);}
+    100%{ transform: rotateX(0) rotateY(0);}
+}
+
+</style>
+
+
+</head>
+<body>
+   
+        <div class="square">
+            <div></div>
+        </div>
+    
+</body>
+</html>
